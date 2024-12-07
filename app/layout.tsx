@@ -8,7 +8,7 @@ import { Footer } from '@/components/footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'PeerRamp - Your Ramp to Financial Freedom',
+  title: 'peerRamp - Your Ramp to Financial Freedom',
   description: 'A Web3-enabled peer-to-peer lending platform connecting student borrowers and lenders.',
 };
 

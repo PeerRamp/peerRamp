@@ -7,7 +7,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold">PeerRamp</h3>
+            <h3 className="text-lg font-semibold">peerRamp</h3>
             <p className="text-sm text-muted-foreground">
               Your Ramp to Financial Freedom through decentralized peer-to-peer lending.
             </p>
@@ -51,7 +51,7 @@ export function Footer() {
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
+            <h3 className="text-lg font-semibold mb-4">Socials</h3>
             <div className="flex space-x-4">
               <Link href="https://twitter.com" className="text-muted-foreground hover:text-foreground">
                 <Twitter className="h-5 w-5" />
