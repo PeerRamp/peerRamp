@@ -19,7 +19,7 @@ export function TeamMember({ name, role, image, bio }: TeamMemberProps) {
     >
       <Card className="p-6 text-center">
         <Avatar className="w-24 h-24 mx-auto mb-4">
-          <AvatarImage src={image} alt={name} />
+          <AvatarImage src={image} alt={name} className="object-cover" />
           <AvatarFallback>{name[0]}</AvatarFallback>
         </Avatar>
         <h3 className="text-xl font-semibold mb-1">{name}</h3>

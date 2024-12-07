@@ -47,10 +47,10 @@ export function TestimonialCarousel() {
           transition={{ duration: 0.5 }}
           className="absolute w-full"
         >
-          <Card className="max-w-2xl mx-auto p-6">
+          <Card className="max-w-2xl mx-auto p-6 cursor-pointer">
             <div className="flex items-center gap-4 mb-4">
               <Avatar>
-                <AvatarImage src={testimonials[current].image} alt={testimonials[current].name} />
+                <AvatarImage src={testimonials[current].image} alt={testimonials[current].name} className="object-cover" />
                 <AvatarFallback>{testimonials[current].name[0]}</AvatarFallback>
               </Avatar>
               <div>
@@ -58,7 +58,7 @@ export function TestimonialCarousel() {
                 <p className="text-sm text-muted-foreground">{testimonials[current].role}</p>
               </div>
             </div>
-            <p className="text-lg italic">{testimonials[current].content}</p>
+            <p className="text-xs">{testimonials[current].content}</p>
           </Card>
         </motion.div>
       </AnimatePresence>
