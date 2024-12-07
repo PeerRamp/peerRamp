@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24">
+      <section className="relative h-screen flex flex-col  justify-center pt-32 pb-16 md:pt-40 md:pb-24">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-teal-950/20" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -72,7 +72,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
             {features.map((feature, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
+              <Card key={index} className="p-6 hover:shadow-lg duration-500 hover:bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-teal-950/20 transition-shadow cursor-pointer">
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
