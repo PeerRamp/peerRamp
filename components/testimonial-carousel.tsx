@@ -7,6 +7,12 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const testimonials = [
   {
+    name: "Alikamatu DevRel",
+    role: "Lender",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+    content: "I really love the robust, security and transparency that blockchain technology brings to the platform.",
+  },
+  {
     name: "Sarah Johnson",
     role: "Student, University of Ghana",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",

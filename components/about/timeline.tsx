@@ -5,19 +5,19 @@ import { Card } from "@/components/ui/card";
 
 const timelineEvents = [
   {
-    year: "2025",
+    year: "January, 2025",
     title: "Platform Launch",
     description: "PeerRamp officially launches its blockchain-based lending platform.",
   },
   {
-    year: "2024",
+    year: "November, 2024",
     title: "Beta Testing",
     description: "Successfully completed beta testing with 100+ students.",
   },
   {
-    year: "2023",
+    year: "June, 2024",
     title: "Development Begins",
-    description: "Started development of the PeerRamp platform.",
+    description: "Started development of the peerRamp platform.",
   },
 ];
 

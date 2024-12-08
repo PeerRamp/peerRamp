@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useInView } from "react-intersection-observer";
-import { Card } from "@/components/ui/card";
-import { BadgeCheck, Shield, TrendingUp } from "lucide-react";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { FeatureSection } from "@/components/home/feature-section";
+import { HowItWorks } from "@/components/home/how-it-works";
 
 export default function Home() {
   const [ref, inView] = useInView({
@@ -13,30 +13,16 @@ export default function Home() {
     threshold: 0.1,
   });
 
-  const features = [
-    {
-      icon: <Shield className="h-8 w-8 text-purple-500" />,
-      title: "Secure Blockchain",
-      description: "Your transactions are protected by cutting-edge blockchain technology",
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-blue-500" />,
-      title: "Quick Loans",
-      description: "Get funded quickly with our streamlined application process",
-    },
-    {
-      icon: <BadgeCheck className="h-8 w-8 text-teal-500" />,
-      title: "Build Credit",
-      description: "Establish and improve your creditworthiness through successful repayments",
-    },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex flex-col  justify-center pt-32 pb-16 md:pt-40 md:pb-24">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-teal-950/20" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section with Animated Background */}
+      <section className="relative min-h-screen flex items-center">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-blue-500/20 to-teal-500/20 animate-gradient" />
+          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+        </div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,32 +49,29 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section ref={ref} className="py-16 md:py-24 bg-background">
+      <section ref={ref} className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {features.map((feature, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg duration-500 hover:bg-gradient-to-br from-purple-50 via-blue-50 to-teal-50 dark:from-purple-950/20 dark:via-blue-950/20 dark:to-teal-950/20 transition-shadow cursor-pointer">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </motion.div>
-              </Card>
-            ))}
+            <h2 className="text-3xl font-bold text-center mb-12">Why Choose PeerRamp?</h2>
+            <FeatureSection />
           </motion.div>
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
+          <HowItWorks />
+        </div>
+      </section>
+
       {/* Testimonials Section */}
-      <section className="py-16 md:py-24 bg-muted/50">
+      <section className="py-24 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12">
             What Our Users Say
