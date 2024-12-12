@@ -1,0 +1,22 @@
+{
+  "name": "contracts",
+  "version": "1.0.0",
+  "description": "\"Smart Contracts folder\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PeerRamp/peerRamp.git"
+  },
+  "keywords": [
+    "peerRamp"
+  ],
+  "author": "Winner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PeerRamp/peerRamp/issues"
+  },
+  "homepage": "https://github.com/PeerRamp/peerRamp#readme"
+}
