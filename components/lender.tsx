@@ -81,7 +81,6 @@ export default function LenderSign() {
           </div>
         </div>
       );
-    
     case 3:
       return (
         <div className="space-y-6">
@@ -103,7 +102,6 @@ export default function LenderSign() {
           </div>
         </div>
       );
-    
     case 4:
       return (
         <div className="space-y-6">
@@ -130,7 +128,6 @@ export default function LenderSign() {
           )}
         </div>
       );
-    
     case 5:
       return (
         <div className="space-y-6">
