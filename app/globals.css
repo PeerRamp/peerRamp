@@ -80,3 +80,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+.form-input {
+  @apply mt-1 block w-full px-3 py-2 bg-white border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+  focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500;
+}
+
+.error-message {
+  @apply mt-1 text-xs text-red-500;
+}
+
+.btn-primary {
+  @apply px-6 py-2.5 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 text-sm font-medium;
+}
+
+.btn-secondary {
+  @apply px-6 py-2.5 bg-gray-200 text-gray-700 rounded-lg shadow-md hover:bg-gray-300 transition-all duration-300 text-sm font-medium;
+}

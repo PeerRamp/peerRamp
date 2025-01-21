@@ -6,10 +6,12 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Moon, Sun, Menu, X } from "lucide-react";
+import { useWallet } from "@/app/context/WalletContext";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { account, connectWallet } = useWallet();
 
   return (
     <nav className="fixed w-full bg-background/80 backdrop-blur-sm z-50 border-b">
@@ -36,9 +38,15 @@ export function Navbar() {
             <Link href="/faq" className="text-foreground/80 hover:text-foreground">
               FAQ
             </Link>
-            <Button variant="default" className="ml-4">
-              Connect Wallet
-            </Button>
+            {account ? (
+              <Button variant="default" className="ml-4">
+                {`${account.slice(0, 6)}...${account.slice(-4)}`}
+              </Button>
+            ) : (
+              <Button variant="default" className="ml-4" onClick={connectWallet}>
+                Connect Wallet
+              </Button>
+            )}
             <Button
               variant="ghost"
               size="icon"
@@ -79,8 +87,8 @@ export function Navbar() {
             <Link href="/faq" className="block px-3 py-2 text-foreground/80 hover:text-foreground">
               FAQ
             </Link>
-            <Button variant="default" className="w-full mt-4">
-              Connect Wallet
+            <Button variant="default" className="w-full mt-4" onClick={connectWallet}>
+              {account ? `${account.slice(0, 6)}...${account.slice(-4)}` : "Connect Wallet"}
             </Button>
           </div>
         </motion.div>

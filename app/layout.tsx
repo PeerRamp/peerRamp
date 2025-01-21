@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
+import {WalletProvider} from './context/WalletContext'
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className} suppressHydrationWarning>
+        <WalletProvider>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,6 +35,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </ThemeProvider>
+        </WalletProvider>
       </body>
     </html>
   );

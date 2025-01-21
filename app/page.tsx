@@ -6,12 +6,21 @@ import { useInView } from "react-intersection-observer";
 import { Card } from "@/components/ui/card";
 import { BadgeCheck, Shield, TrendingUp } from "lucide-react";
 import { TestimonialCarousel } from "@/components/testimonial-carousel";
+import { useEffect } from "react";
 
 export default function Home() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      window.location.href = "/sign";
+    }
+  }, []);
+  
 
   const features = [
     {
