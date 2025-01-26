@@ -9,33 +9,27 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const formSchema = z.object({
-  // Personal Information
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
   dateOfBirth: z.string().min(1, 'Date of birth is required'),
   contactNumber: z.string().min(10, 'Valid phone number required'),
   email: z.string().email('Invalid email address'),
   
-  // Identity Verification
   ghanaCard: z.any().refine((file) => file?.length > 0, 'Ghana Card is required'),
   universityId: z.any().refine((file) => file?.length > 0, 'Valid University ID is required'),
   
-  // Academic Information
   universityName: z.string().min(1, 'University name is required'),
   programOfStudy: z.string().min(1, 'Program of study is required'),
   graduationYear: z.string().min(1, 'Expected year of graduation is required'),
   
-  // Loan Eligibility Details
   enrollmentProof: z.any().refine((file) => file?.length > 0, 'Proof of current enrollment is required'),
   creditScore: z.string().optional(),
   
-  // Security
   password: z.string()
     .min(8, 'Password must be at least 8 characters')
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/, 
       'Password must include uppercase, lowercase, number and special character'),
   enable2FA: z.boolean(),
   
-  // Terms
   agreeToLoanTerms: z.boolean().refine((val) => val === true, 'You must agree to loan terms'),
   consentToDataSharing: z.boolean().refine((val) => val === true, 'Consent to data sharing is required'),
 });
