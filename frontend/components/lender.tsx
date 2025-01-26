@@ -9,28 +9,23 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const formSchema = z.object({
-  // Personal Information
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
   dateOfBirth: z.string().min(1, 'Date of birth is required'),
   contactNumber: z.string().min(10, 'Valid phone number required'),
   email: z.string().email('Invalid email address'),
   
-  // Identity Verification
   governmentId: z.any().refine((file) => file?.length > 0, 'Government ID is required'),
   addressProof: z.any().refine((file) => file?.length > 0, 'Address proof is required'),
   
-  // Financial Information
   bankAccount: z.string().min(1, 'Bank account details required'),
   fundProof: z.any().refine((file) => file?.length > 0, 'Proof of funds required'),
   
-  // Security
   password: z.string()
     .min(8, 'Password must be at least 8 characters')
     .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])/, 
       'Password must include uppercase, lowercase, number and special character'),
   enable2FA: z.boolean(),
   
-  // Terms
   agreeToTerms: z.boolean().refine((val) => val === true, 'You must agree to terms'),
   agreeToKYC: z.boolean().refine((val) => val === true, 'KYC verification is required'),
 });
